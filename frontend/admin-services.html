@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Cennik — Panel Admina</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="admin-nav">
+    <a href="admin-calendar.html">Kalendarz</a>
+    <a href="admin-appointments.html">Rezerwacje</a>
+    <a href="admin-hairdressers.html">Fryzjerzy</a>
+    <a href="admin-stats.html">Statystyki</a>
+
+<a href="admin-services.html" class="active">Cennik</a>
+
+    <button onclick="logout()">Wyloguj</button>
+</nav>
+
+
+<h2 class="page-title">Cennik usług</h2>
+
+<div class="content-wrap">
+    <div class="box">
+        <h3>Dodaj / edytuj usługę</h3>
+
+        <input type="hidden" id="srv-id">
+
+        <label>Nazwa PL</label>
+        <input id="srv-pl">
+
+        <label>Nazwa EN</label>
+        <input id="srv-en">
+
+        <label>Cena</label>
+        <input id="srv-price" type="number">
+
+        <button onclick="saveService()">Zapisz</button>
+        <button onclick="deleteService()" class="warn">Usuń</button>
+        <button onclick="clearServiceForm()">Wyczyść</button>
+    </div>
+
+    <div class="box" style="flex:1;">
+        <h3>Lista usług</h3>
+        <div id="servicesList"></div>
+    </div>
+</div>
+
+<script src="js/admin-services.js"></script>
+<script src="js/api.js"></script>
+
+
+</body>
+</html>

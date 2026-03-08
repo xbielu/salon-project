@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezerwacje — Panel Admina</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<nav class="admin-nav">
+    <a href="admin-calendar.html">Kalendarz</a>
+    <a href="admin-appointments.html">Rezerwacje</a>
+    <a href="admin-hairdressers.html">Fryzjerzy</a>
+    <a href="admin-services.html">Cennik</a>
+    <a href="admin-stats.html">Statystyki</a>
+
+    <button onclick="logout()">Wyloguj</button>
+</nav>
+
+
+<h2 class="page-title">Rezerwacje</h2>
+
+<div class="content-wrap">
+
+  <div class="box" style="flex:1;">
+    <h3>Dodaj rezerwację</h3>
+
+    <form class="booking" onsubmit="event.preventDefault(); addAppointment();">
+
+      <label>Imię i nazwisko</label>
+      <input id="adm-name" placeholder="Jan Kowalski">
+
+      <label>Email</label>
+      <input id="adm-email" type="email" placeholder="jan@email.pl">
+
+      <label>Telefon</label>
+      <input id="adm-phone" placeholder="600123456">
+
+      <label>Fryzjer</label>
+      <select id="adm-hairdresser"></select>
+
+      <label>Usługa</label>
+      <select id="adm-service"></select>
+
+      <label>Data</label>
+      <input id="adm-date" type="date" onchange="loadAdminTimes()">
+
+      <label>Godzina</label>
+      <select id="adm-time"></select>
+
+      <button class="book-btn" type="submit">
+        Dodaj rezerwację
+      </button>
+
+    </form>
+  </div>
+
+  <div class="box" style="flex:1;">
+    <h3>Lista rezerwacji</h3>
+
+    <label>Wybierz datę:</label>
+    <input type="date" id="app-date" onchange="loadAppointments()">
+
+    <div id="appointmentsList" style="margin-top:12px;"></div>
+  </div>
+
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/admin-appointments.js"></script>
+
+</body>
+</html>
