@@ -25,9 +25,10 @@ app.use((req, res) => {
   res.sendFile(path.join(FRONTEND_PATH, "index.html"));
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-  console.log(`SERVER RUNNING http://localhost:${PORT}`);
+  console.log("SERVER RUNNING ON PORT", PORT);
 });
 const path = require("path");
 

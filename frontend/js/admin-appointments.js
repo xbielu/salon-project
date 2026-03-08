@@ -1,5 +1,4 @@
-
-const API = window.API || "http://localhost:3000";
+const API = window.location.origin;
 
 const dateInput = document.getElementById("app-date");
 const box = document.getElementById("appointmentsList");

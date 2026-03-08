@@ -1,5 +1,4 @@
-if (!window.API) window.API = "http://localhost:3000";
-
+if (!window.API) window.API = window.location.origin;
 document.addEventListener("DOMContentLoaded", loadHairdressers);
 
 async function loadHairdressers() {

@@ -1,5 +1,4 @@
-if (!window.API) window.API = "http://localhost:3000";
-
+if (!window.API) window.API = window.location.origin;
 async function loadServices() {
     const res = await fetch(`${API}/services`);
     const list = await res.json();

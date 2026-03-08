@@ -1,5 +1,4 @@
-const API = "http://localhost:3000";
-
+if (!window.API) window.API = window.location.origin;
 async function loadSchedule() {
   const id = localStorage.getItem("hairdresser_id");
   if (!id) {

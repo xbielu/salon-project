@@ -1,5 +1,4 @@
-const API = "http://localhost:3000";
-
+if (!window.API) window.API = window.location.origin;
 let weekChart = null;
 let monthChart = null;
 let hairdresserChart = null;

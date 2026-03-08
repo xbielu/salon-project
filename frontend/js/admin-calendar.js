@@ -1,5 +1,4 @@
-if (!window.API) window.API = "http://localhost:3000";
-
+if (!window.API) window.API = window.location.origin;
 let currentYear = new Date().getFullYear();
 let currentMonth = new Date().getMonth();
 let selectedHairdresserId = null;

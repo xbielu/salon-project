@@ -1,5 +1,4 @@
-window.API = "http://localhost:3000";
-
+window.API = window.location.origin;
 
 function validateFullName(name) {
   if (!name) return false;
